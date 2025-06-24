@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settleroutes - Tour & Travel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and other overrides */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #343A40; /* Dark charcoal grey */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-primary-blue {
+            color: #1A535C; /* Sophisticated teal-blue */
+        }
+        .bg-primary-blue {
+            background-color: #1A535C;
+        }
+        .text-accent-orange {
+            color: #FFA000; /* Vibrant gold/orange */
+        }
+        .bg-accent-orange {
+            background-color: #FFA000;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Basic scrollbar styling (optional, for aesthetics) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header - Copied for consistency -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center rounded-lg">
+            <!-- Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <!-- Placeholder Logo - replace with actual SVG/Image -->
+                <svg class="w-8 h-8 text-primary-blue" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7.5 11.75a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM10 5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.75A.75.75 0 0110 5z" clip-rule="evenodd"></path></svg>
+                <span class="text-2xl font-bold text-primary-blue">Settleroutes</span>
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">About</a></li>
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300 flex items-center">
+                        Visa Consultancy
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <!-- Dropdown Menu - Links to separate service pages -->
+                    <ul class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg py-2 mt-2 w-48 text-gray-700 z-10">
+                        <li><a href="study-visa.html" class="block px-4 py-2 hover:bg-gray-100 rounded-md">Study Visa</a></li>
+                        <li><a href="pr-visa.html" class="block px-4 py-2 hover:bg-gray-100 rounded-md">Permanent Residence</a></li>
+                        <li><a href="tourist-visa.html" class="block px-4 py-2 hover:bg-gray-100 rounded-md">Tourist Visa</a></li>
+                    </ul>
+                </li>
+                <li><a href="tour-travel.html" class="text-primary-blue font-medium transition-colors duration-300">Tour & Travel</a></li> <!-- Active class for Tour & Travel page -->
+                <li><a href="contact.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <!-- CTA Button (Desktop) -->
+            <a href="contact.html" class="hidden md:block px-6 py-2 bg-accent-orange text-white font-semibold rounded-full shadow-md hover:bg-orange-600 transition-colors duration-300">Free Consultation</a>
+
+            <!-- Mobile Hamburger Menu Icon -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none focus:text-primary-blue">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu - Copied for consistency -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-blue shadow-lg py-4 absolute w-full top-full left-0">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="index.html" class="text-white ho
