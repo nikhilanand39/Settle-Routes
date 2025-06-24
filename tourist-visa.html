@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settleroutes - Tourist Visa Consultancy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and other overrides */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #343A40; /* Dark charcoal grey */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-primary-blue {
+            color: #1A535C; /* Sophisticated teal-blue */
+        }
+        .bg-primary-blue {
+            background-color: #1A535C;
+        }
+        .text-accent-orange {
+            color: #FFA000; /* Vibrant gold/orange */
+        }
+        .bg-accent-orange {
+            background-color: #FFA000;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Basic scrollbar styling (optional, for aesthetics) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header - Copied for consistency -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center rounded-lg">
+            <!-- Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <!-- Placeholder Logo - replace with actual SVG/Image -->
+                <svg class="w-8 h-8 text-primary-blue" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7.5 11.75a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM10 5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.75A.75.75 0 0110 5z" clip-rule="evenodd"></path></svg>
+                <span class="text-2xl font-bold text-primary-blue">Settleroutes</span>
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">About</a></li>
+                <li class="relative group">
+                    <a href="#" class="text-primary-blue font-medium transition-colors duration-300 flex items-center">
+                        Visa Consultancy
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <!-- Dropdown Menu - Active class for Tourist Visa page -->
+                    <ul class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg py-2 mt-2 w-48 text-gray-700 z-10">
+                        <li><a href="study-visa.html" class="block px-4 py-2 hover:bg-gray-100 rounded-md">Study Visa</a></li>
+                        <li><a href="pr-visa.html" class="block px-4 py-2 hover:bg-gray-100 rounded-md">Permanent Residence</a></li>
+                        <li><a href="tourist-visa.html" class="block px-4 py-2 text-primary-blue bg-gray-100 rounded-md">Tourist Visa</a></li> <!-- Active -->
+                    </ul>
+                </li>
+                <li><a href="tour-travel.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">Tour & Travel</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <!-- CTA Button (Desktop) -->
+            <a href="contact.html" class="hidden md:block px-6 py-2 bg-accent-orange text-white font-semibold rounded-full shadow-md hover:bg-orange-600 transition-colors duration-300">Free Consultation</a>
+
+            <!-- Mobile Hamburger Menu Icon -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none focus:text-primary-blue">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu - Copied for consistency -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-blue shadow-lg py-4 absolute w-full top-full left-0">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="index.html" class="text-white hover:text-accent-orange font-medium block py-2 transition-colors duration-300">Home</a></li>
+                <li><a href="about.html" class="text-white hover:text-accent-orange font-medium block py-2 transition-colors duration-300">About</a></li>
+                <li class="w-full text-center">
+                    <a href="#" class="text-accent-orange font-medium block py-2 transition-colors duration-300 mobile-dropdown-toggle">Visa Consultancy
+                        <svg class="ml-1 w-4 h-4 inline-block transform transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <ul class="mobile-dropdown-menu mt-2 space-y-2 bg-primary-blue/90 rounded-md p-2"> <!-- Displayed by default on mobile -->
+                        <li><a href="study-visa.html" class="block text-gray-200 hover:text-white text-sm py-1">Study Visa</a></li>
+                        <li><a href="pr-visa.html" class="block text-gray-200 hover:text-white text-sm py-1">Permanent Residence</a></li>
+                        <li><a href="tourist-visa.html" class="block text-white hover:text-accent-orange text-sm py-1">Tourist Visa</a></li> <!-- Active -->
+                    </ul>
+                </li>
+                <li><a href="tour-travel.html" class="text-white hover:text-accent-orange font-medium block py-2 transition-colors duration-300">Tour & Travel</a></li>
+                <li><a href="contact.html" class="text-white hover:text-accent-orange font-medium block py-2 transition-colors duration-300">Contact</a></li>
+                <li><a href="contact.html" class="px-6 py-2 bg-accent-orange text-white font-semibold rounded-full shadow-md hover:bg-orange-600 transition-colors duration-300 block w-1/2 text-center mt-4 mx-auto">Free Consultation</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="pt-24 bg-gray-50"> <!-- Add padding-top to account for fixed header -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h1 class="text-5xl font-bold text-primary-blue text-center mb-12">Tourist Visa Consultancy</h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <img src="https://placehold.co/800x600/c0c0c0/ffffff?text=Tourist+Travel" alt="Couple on vacation" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-4xl font-bold text-primary-blue mb-6">Explore the World Hassle-Free</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            Planning a vacation, visiting family, or attending an event abroad? Settleroutes provides expert tourist visa consultancy to ensure your travel plans are stress-free. We assist you with understanding visa requirements, preparing necessary documents, and navigating the application process for various countries.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Our team is dedicated to making your leisure travel smooth and enjoyable. Let us handle the complexities of visa applications, so you can focus on creating unforgettable memories.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+                    <h2 class="text-4xl font-bold text-primary-blue text-center mb-8">Required Documents for Tourist Visa</h2>
+                    <div class="space-y-4 text-lg text-gray-700 max-w-4xl mx-auto">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Valid Passport:</h3>
+                            <p>Original passport with at least six months validity remaining and sufficient blank pages.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Visa Application Form:</h3>
+                            <p>Duly filled and signed application form specific to the destination country.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Photographs:</h3>
+                            <p>Recent passport-sized photographs meeting specific embassy requirements.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Travel Itinerary & Bookings:</h3>
+                            <p>Confirmed flight tickets (round trip) and hotel reservations for the duration of stay.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Proof of Funds:</h3>
+                            <p>Bank statements, salary slips, or other financial documents demonstrating sufficient funds for the trip.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-primary-blue mb-2">Leave Letter (if employed):</h3>
+                            <p>No-objection certificate/leave approval from employer, if applicable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+                    <h2 class="text-4xl font-bold text-primary-blue text-center mb-8">Our Tourist Visa Application Process</h2>
+                    <ol class="list-decimal list-inside space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                        <li>**Consultation & Country Selection:** Discuss your travel plans and identify the most suitable visa type and country.</li>
+                        <li>**Document Checklist & Preparation:** Provide a detailed list of required documents and assist in their collection and verification.</li>
+                        <li>**Application Form Filling:** Accurately complete the visa application form on your behalf.</li>
+                        <li>**Appointment Scheduling:** Book your visa appointment at the relevant embassy or consulate.</li>
+                        <li>**Submission & Follow-up:** Submit your application and track its status until a decision is made.</li>
+                        <li>**Visa Stamping & Collection:** Guide you through the final steps of visa collection.</li>
+                    </ol>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-16">
+                    <h2 class="text-4xl font-bold text-primary-blue text-center mb-8">Frequently Asked Questions (FAQ)</h2>
+                    <div class="space-y-4 max-w-4xl mx-auto">
+                        <!-- FAQ Item 1 -->
+                        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+                            <summary class="font-semibold text-primary-blue text-lg flex justify-between items-center">
+                                How long does it take to get a tourist visa?
+                                <svg class="ml-2 w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <p class="pt-2 text-gray-700">Processing times vary significantly by country, embassy workload, and time of year. It can range from a few days to several weeks. We recommend applying well in advance of your travel date.</p>
+                        </details>
+                        <!-- FAQ Item 2 -->
+                        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+                            <summary class="font-semibold text-primary-blue text-lg flex justify-between items-center">
+                                Can I extend my tourist visa?
+                                <svg class="ml-2 w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <p class="pt-2 text-gray-700">Visa extension policies depend entirely on the country that issued the visa. Some countries allow extensions under specific circumstances, while others do not. It's crucial to check the regulations of your destination country.</p>
+                        </details>
+                        <!-- FAQ Item 3 -->
+                        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+                            <summary class="font-semibold text-primary-blue text-lg flex justify-between items-center">
+                                Is travel insurance mandatory for a tourist visa?
+                                <svg class="ml-2 w-5 h-5 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <p class="pt-2 text-gray-700">For many countries, especially those in the Schengen Area, travel insurance is a mandatory requirement for a tourist visa. It is highly recommended even if not mandatory, for your safety and peace of mind.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Contact Form specific to Tourist Visa -->
+                <div class="bg-white p-8 rounded-xl shadow-lg mt-16">
+                    <h2 class="text-4xl font-bold text-primary-blue text-center mb-8">Inquire About Tourist Visa</h2>
+                    <form id="tourist-visa-contact-form" class="space-y-6 max-w-2xl mx-auto">
+                        <div>
+                            <label for="tourist_visa_name" class="block text-gray-700 text-sm font-bold mb-2">Your Name:</label>
+                            <input type="text" id="tourist_visa_name" name="name" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="tourist_visa_email" class="block text-gray-700 text-sm font-bold mb-2">Your Email:</label>
+                            <input type="email" id="tourist_visa_email" name="email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="tourist_visa_phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number (Optional):</label>
+                            <input type="tel" id="tourist_visa_phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 9876543210" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="tourist_visa_country" class="block text-gray-700 text-sm font-bold mb-2">Desired Travel Country:</label>
+                            <input type="text" id="tourist_visa_country" name="country" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent" placeholder="e.g., USA, France, Japan">
+                        </div>
+                        <div>
+                            <label for="tourist_visa_message" class="block text-gray-700 text-sm font-bold mb-2">Your Message:</label>
+                            <textarea id="tourist_visa_message" name="message" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button type="submit" class="bg-accent-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition-colors duration-300 transform hover:scale-105">Submit Inquiry</button>
+                        </div>
+                        <div id="tourist-visa-form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section - For standalone service page -->
+        <section class="py-16 bg-primary-blue text-white text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-8">Ready for Your Next Getaway?</h2>
+                <p class="text-lg opacity-90 mb-8">Let Settleroutes make your travel dreams a reality.</p>
+                <a href="#tourist-visa-contact-form" class="inline-block px-8 py-3 bg-accent-orange text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-300">Plan Your Trip Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Copied for consistency -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Company Info -->
+            <div>
+                <h4 class="text-xl font-bold mb-4">Settleroutes</h4>
+                <p class="text-gray-400 leading-relaxed mb-4">Your trusted partner for seamless visa and travel solutions.</p>
+                <div class="flex items-center space-x-2 text-gray-400 mb-2 justify-center md:justify-start">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    <span>+91 98763 96552</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-400 justify-center md:justify-start">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                    <span>info@settleroutes.com</span>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="text-center md:text-left">
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                    <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html" class="text-gray-400 hover:text-white transition-colors duration-300">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media (Mini) -->
+            <div class="text-center md:text-left">
+                <h4 class="text-xl font-bold mb-4">Connect With Us</h4>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.799c0-2.502 1.492-3.886 3.776-3.886 1.094 0 2.24.195 2.24.195V8.5h-1.228c-1.103 0-1.447.68-1.447 1.396V12h2.773l-.443 2.89h-2.33V22h5.517c3.093-.728 5.483-3.66 5.483-7c0-4.991-4.477-9-10-9z"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.149 3.225-1.664 4.771-4.919 4.919-.058.003-1.217.07-4.85.07s-3.584-.012-4.85-.07c-3.251-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.665-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 3.125c-3.176 0-3.567.01-4.793.064-2.887.132-3.96 1.216-4.09 4.09-.054 1.226-.064 1.617-.064 4.793s.01 3.567.064 4.793c.13 2.887 1.203 3.96 4.09 4.09.054.002 1.226.064 4.793.064s3.567-.01 4.793-.064c2.887-.13 3.96-1.203 4.09-4.09.054-1.226.064-1.617.064-4.793s-.01-3.567-.064-4.793c-.13-2.887-1.203-3.96-4.09-4.09-1.226-.054-1.617-.064-4.793-.064zm0 3.966a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.375a2.875 2.875 0 110-5.75 2.875 2.875 0 010 5.75zM17.25 5.85a1.282 1.282 0 110 2.563 1.282 1.282 0 010-2.563z"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C4.98 2.515 5.815 1.75 6.843 1.75h10.314c1.028 0 1.863.765 1.863 1.75v16.5C19.02 21.485 18.185 22.25 17.157 22.25H6.843c-1.028 0-1.863-.765-1.863-1.75V3.5zm7.045 4.75h2.15l.394-1.5H12.02c-.892 0-1.066.452-1.066 1.053V9.5h3.19l-.427 1.5H10.954V18h-2.95V11H6.55V9.5h1.454V8.125c0-2.203 1.34-3.407 3.292-3.407z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> Settleroutes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for mobile dropdown toggle within the mobile menu
+        document.querySelector('.mobile-dropdown-toggle').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            const dropdownMenu = this.nextElementSibling; // Get the next sibling, which is the dropdown ul
+            const arrowIcon = this.querySelector('svg'); // Get the SVG icon
+            
+            dropdownMenu.classList.toggle('hidden');
+            arrowIcon.classList.toggle('rotate-180'); // Rotate arrow on click
+        });
+
+        // JavaScript for tourist visa specific form submission (client-side only for this example)
+        document.getElementById('tourist-visa-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission
+
+            const formMessage = document.getElementById('tourist-visa-form-message');
+            formMessage.classList.remove('hidden', 'text-red-600', 'text-green-600');
+            formMessage.innerHTML = ''; // Clear previous messages
+
+            const name = document.getElementById('tourist_visa_name').value;
+            const email = document.getElementById('tourist_visa_email').value;
+            const message = document.getElementById('tourist_visa_message').value;
+
+            // Basic validation
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                formMessage.classList.add('text-red-600');
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Simple email format check
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.classList.add('text-red-600');
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Simulate form submission
+            console.log('Tourist Visa form submitted:', { name, email, message });
+
+            // Display success message
+            formMessage.classList.add('text-green-600');
+            formMessage.textContent = 'Thank you for your tourist visa inquiry! We will get back to you shortly.';
+            formMessage.classList.remove('hidden');
+
+            // Optionally clear the form
+            this.reset();
+        });
+
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
